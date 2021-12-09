@@ -5,9 +5,6 @@ import os
 import cv2
 import tensorflow as tf
 
-phsycal_devices = tf.config.list_physical_devices('GPU')
-tf.config.experimental.set_memory_growth(phsycal_devices[0], True)
-
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
 model = load_model('selderi_jeruk_nipis_class_model.h5')
