@@ -11,8 +11,13 @@ model = load_model('selderi_jeruk_nipis_class_model.h5')
 
 class_dict = {0: 'Daun Jeruk Nipis', 1: 'Daun Seledri'}
 
+def img_contrast(image):
+    return cv2.addWeighted(image, 1.5, np.zeros(image.shape, image.dtype), 0, -100)
+
+
 def predict_label(img_path):
     query = cv2.imread(img_path)
+    query = img_contrast(query)
     output = query.copy()
     query = cv2.resize(query, (32, 32))
     q = []
