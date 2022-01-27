@@ -7,7 +7,7 @@ import tensorflow as tf
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
-model = load_model('rugby_soccer_model.h5')
+model = load_model('ame_eu_football_model.h5')
 
 class_dict = {0: 'American Football', 1: 'European Football'}
 
